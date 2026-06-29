@@ -32,19 +32,19 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         </div>
       </div>
 
-      <form class="contact-form" onsubmit="var n=document.getElementById('name').value,e=document.getElementById('email').value,m=document.getElementById('message').value;window.location.href='mailto:sethdow25@gmail.com?subject='+encodeURIComponent('Portfolio inquiry from '+n)+'&body='+encodeURIComponent(m+'\n\nFrom: '+n+' ('+e+')');return false;">
+      <form class="contact-form" action="https://formspree.io/f/xeebzwra" method="POST">
         <h2>Send a message</h2>
         <div class="field">
           <label for="name">Name</label>
-          <input id="name" type="text" placeholder="Jane Smith" />
+          <input id="name" name="name" type="text" placeholder="Jane Smith" />
         </div>
         <div class="field">
           <label for="email">Email</label>
-          <input id="email" type="email" placeholder="jane@example.com" />
+          <input id="email" name="email" type="email" placeholder="jane@example.com" />
         </div>
         <div class="field">
           <label for="message">Message</label>
-          <textarea id="message" rows="5" placeholder="What's on your mind?"></textarea>
+          <textarea id="message" name="message" rows="5" placeholder="What's on your mind?"></textarea>
         </div>
         <button type="submit" class="btn-send">Send Message</button>
       </form>
