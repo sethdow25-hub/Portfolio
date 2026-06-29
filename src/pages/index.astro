@@ -1,0 +1,219 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="Home" description="Portfolio of Seth Dow — Release Train Engineer, Advanced SAFe Practice Consultant (ASPC), 24-Year Army Veteran">
+  <section class="hero">
+    <div class="container hero-inner">
+      <div class="hero-text">
+        <p class="eyebrow">Hello, I'm</p>
+        <h1>Seth Dow</h1>
+        <p class="subtitle">
+          Strategic Project Manager & Operations Leader | 24-Year Army Veteran. Release Train Engineer
+          and Advanced SAFe Practice Consultant (ASPC) at Accenture Federal Services. MBA. Active Secret Security Clearance.
+        </p>
+        <div class="cta-group">
+          <a href="/experience" class="btn btn-primary">View Experience</a>
+          <a href="/contact" class="btn btn-ghost">Get in Touch</a>
+        </div>
+      </div>
+      <div class="hero-photo">
+        <img src="/headshot.jpg" alt="Seth Dow" />
+      </div>
+    </div>
+  </section>
+
+  <section class="about">
+    <div class="container">
+      <h2 class="section-title">About</h2>
+      <p class="about-text">
+        I build, scale, and lead high-performing teams to execute complex, multi-million-dollar programs.
+        After 24 years of military leadership, I bring a battle-tested approach to strategic planning,
+        risk mitigation, and enterprise-wide process improvement in the corporate sector.
+      </p>
+      <p class="about-text">
+        I bridge the gap between executive strategy and technical execution. Whether managing complex SAP
+        development objects or aligning personnel to critical workflow bottlenecks, I specialize in
+        transforming chaotic requirements into streamlined, measurable success. I don't just manage
+        projects — I build the operational frameworks that allow organizations to scale efficiently.
+      </p>
+    </div>
+  </section>
+
+  <section class="skills">
+    <div class="container">
+      <h2 class="section-title">Core Competencies</h2>
+      <div class="skill-grid">
+        {[
+          { label: "Agile Leadership", items: ["Release Train Engineering", "SAFe Practice Consulting", "Scrum Master", "Kanban"] },
+          { label: "Management", items: ["Project & Program Mgmt", "Change Management", "Strategic Planning", "Risk Mitigation"] },
+          { label: "Operations", items: ["Enterprise Operations", "Supply Chain Optimization", "Asset Management", "Process Improvement"] },
+          { label: "Analytics", items: ["Data Analysis", "SAP ERP", "Quality Assurance", "Regulatory Compliance"] },
+        ].map(({ label, items }) => (
+          <div class="skill-card">
+            <h3>{label}</h3>
+            <ul>
+              {items.map((item) => <li>{item}</li>)}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="featured">
+    <div class="container">
+      <h2 class="section-title">Career Highlights</h2>
+      <div class="highlight-grid">
+        {[
+          {
+            stat: "24",
+            label: "Years of Military Leadership",
+            desc: "Battle-tested leadership driving strategic planning and enterprise operations across the U.S. Army.",
+          },
+          {
+            stat: "7",
+            label: "Agile Teams Led as RTE",
+            desc: "Directing an Agile Release Train of 4 Scrum and 3 Kanban teams delivering a federal enterprise logistics system.",
+          },
+          {
+            stat: "99→70",
+            label: "Days Cycle Time Reduced",
+            desc: "Engineered systemic Agile process improvements cutting feature cycle time by 29 days.",
+          },
+          {
+            stat: "$750M+",
+            label: "Assets Managed",
+            desc: "Oversaw maintenance accountability and compliance of major capital asset portfolios across the Army.",
+          },
+        ].map(({ stat, label, desc }) => (
+          <div class="highlight-card">
+            <span class="stat">{stat}</span>
+            <h3>{label}</h3>
+            <p>{desc}</p>
+          </div>
+        ))}
+      </div>
+      <div class="center">
+        <a href="/experience" class="btn btn-ghost">Full Experience →</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .hero { padding: 6rem 0 5rem; }
+  .hero-inner {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 4rem;
+    align-items: center;
+  }
+  .hero-photo img {
+    width: 260px;
+    height: 260px;
+    object-fit: cover;
+    object-position: center top;
+    border-radius: 50%;
+    border: 3px solid var(--accent);
+    box-shadow: 0 0 40px var(--accent-dim);
+    display: block;
+  }
+  @media (max-width: 700px) {
+    .hero-inner { grid-template-columns: 1fr; }
+    .hero-photo { display: none; }
+  }
+  .eyebrow {
+    color: var(--accent);
+    font-size: 0.95rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.04em;
+  }
+  h1 {
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+  }
+  .subtitle {
+    color: var(--muted);
+    font-size: 1.05rem;
+    max-width: 600px;
+    margin-bottom: 2rem;
+    line-height: 1.7;
+  }
+  .cta-group { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .btn {
+    padding: 0.65rem 1.4rem;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: opacity 0.2s;
+  }
+  .btn:hover { opacity: 0.85; }
+  .btn-primary { background: var(--accent); color: #fff; }
+  .btn-ghost { border: 1px solid var(--border); color: var(--text); }
+
+  .about, .skills, .featured {
+    padding: 4rem 0;
+    border-top: 1px solid var(--border);
+  }
+  .section-title { font-size: 1.4rem; font-weight: 600; margin-bottom: 1.5rem; }
+  .about-text {
+    color: var(--muted);
+    font-size: 1rem;
+    line-height: 1.8;
+    max-width: 720px;
+    margin-bottom: 1rem;
+  }
+
+  .skill-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-top: 0.5rem;
+  }
+  .skill-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1.25rem;
+  }
+  .skill-card h3 {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 0.75rem;
+  }
+  .skill-card ul { list-style: none; display: flex; flex-direction: column; gap: 0.4rem; }
+  .skill-card li { font-size: 0.875rem; }
+
+  .highlight-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+  .highlight-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1.5rem;
+    transition: border-color 0.2s;
+  }
+  .highlight-card:hover { border-color: var(--accent); }
+  .stat {
+    display: block;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 0.25rem;
+  }
+  .highlight-card h3 { font-size: 0.9rem; font-weight: 600; margin-bottom: 0.5rem; }
+  .highlight-card p { color: var(--muted); font-size: 0.82rem; line-height: 1.6; }
+
+  .center { text-align: center; }
+</style>

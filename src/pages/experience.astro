@@ -1,0 +1,247 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const roles = [
+  {
+    org: "Accenture Federal Services",
+    title: "Release Train Engineer (RTE) | Enterprise Agile Delivery",
+    period: "Oct 2024 – Present",
+    bullets: [
+      "Directing an Agile Release Train (ART) of 7 cross-functional teams (4 Scrum, 3 Kanban), driving end-to-end delivery of major software enhancements for a massive-scale federal enterprise logistics system",
+      "Managing rigorous 10-week Program Increments (PIs), maintaining a high-velocity throughput of 35 complex features per PI",
+      "Engineered systemic Agile process improvements clearing critical pipeline bottlenecks, reducing feature cycle time from 99 days to 70 days",
+      "Orchestrated deployment of 20 major enterprise-level enhancements into live production, ensuring zero disruption to global supply chain and logistics operations",
+      "Synchronized delivery across Scrum and Kanban, optimizing resource allocation and ensuring alignment with executive strategic roadmaps",
+    ],
+  },
+  {
+    org: "Accenture Federal Services",
+    title: "IT Project Manager | SAFe Transformation & Scrum Master",
+    period: "Aug 2022 – Oct 2024",
+    bullets: [
+      "Spearheaded the foundational transition to the Scaled Agile Framework (SAFe) for an SAP Maintenance business area, acting as primary Agile transformation lead in partnership with the RTE and Enterprise Agile Lead",
+      "Engineered continuous improvement frameworks and cleared critical bottlenecks, driving a 25% measurable increase in team efficiency over 5 Program Increments",
+      "Directed a 7-member cross-functional Scrum team through rigorous 10-day sprint cycles using ServiceNow to manage the product backlog",
+      "Maintained a consistent velocity of 33 story points per sprint, delivering 50 complex SAP features aligned with strategic enterprise maintenance goals",
+    ],
+  },
+  {
+    org: "Accenture Federal Services",
+    title: "DoD SkillBridge Fellow | Corporate Transition Program",
+    period: "May 2022 – Aug 2022",
+    bullets: [
+      "Completed an intensive corporate transition fellowship, mastering proprietary federal consulting methodologies and enterprise IT delivery models to bridge 20+ years of military leadership into the corporate tech sector",
+      "Immersed in federal system integration processes, shadowing senior Agile leaders and Release Train Engineers (RTEs) to absorb best practices for managing large-scale, multi-million-dollar government contracts",
+      "Acquired foundational expertise in SAFe, completing rigorous training covering Program Increments (PIs), cross-team dependency mapping, and Value Stream optimization",
+      "Assisted in Agile ceremonies across multiple Scrum and Kanban teams; analyzed legacy workflows to increase development velocity and operational efficiency",
+    ],
+  },
+  {
+    org: "U.S. Army Logistics Center (CASCOM)",
+    title: "Training Development Project/Program Manager",
+    period: "Sep 2019 – Mar 2022",
+    bullets: [
+      "Led strategic operations and portfolio management for organizational equipment valued at $186K+, advising the Department Director on personnel movement, projects, and resource allocation",
+      "Coached 77 employees across 50+ projects; maintained a 97% job-readiness rate",
+      "Submitted and tracked 70 employee awards; led 36 professional development sessions",
+      "Provided career coaching to 28 team members — 8 promoted ahead of peers, 6 elevated career paths",
+      "Enforced safety standards across 19 worksites with zero incidents over 36 months",
+      "Facilitated weekly planning meetings to review performance and remove senior-level impediments",
+    ],
+  },
+  {
+    org: "U.S. Army",
+    title: "Senior Program Manager | Enterprise Training & SAP Adoption",
+    period: "Sep 2017 – Sep 2019",
+    bullets: [
+      "Directed end-to-end design, development, and execution of a comprehensive 80-hour SAP ERP curriculum, driving system adoption and readiness for 1,800+ users annually across 13 geographically dispersed locations",
+      "Synchronized complex organizational change management initiatives across 13 distributed organizations, delivering 6 major training rollouts on schedule and within budget",
+      "Spearheaded enterprise-wide scaling of operational standards, deploying unified logistics frameworks to 5,000+ personnel and 6,000 management-level stakeholders annually",
+      "Conducted deep-dive data analysis on 6,400+ operational data points, synthesizing findings into strategic executive briefings",
+      "Directed the full product lifecycle using the ADDIE framework to build, test, and implement high-level leadership and logistics programs",
+      "Achieved top-tier accreditation ratings during a major U.S. Army TRADOC federal oversight audit",
+    ],
+  },
+  {
+    org: "U.S. Army",
+    title: "Industry Consultant Trainee",
+    period: "Jul 2016 – Jun 2017",
+    bullets: [
+      "Represented the U.S. Army Ordnance Regiment at Oshkosh Defense LLC, coordinating communication between Ordnance Regiment Project leads and the industry manufacturer",
+      "Saved the company $120,000+ in training support, development, and implementation costs",
+      "Completed 100 hours of OEM maintenance and operations training on tactical wheeled vehicles and fire & rescue equipment",
+      "Completed 120 hours of internship with the Defense Contract Management Agency (DCMA) on DoD acquisition, quality assurance, and production inspections",
+      "Received 100 hours of ISO 9001 quality management training; evaluated two Oshkosh supply warehouses for Kaizen continuous improvement opportunities",
+    ],
+  },
+  {
+    org: "U.S. Army Pacific",
+    title: "Maintenance Program Manager",
+    period: "May 2013 – Jun 2016",
+    bullets: [
+      "Directed enterprise operations and compliance across 2 geographically dispersed business units, overseeing 2,000+ cross-functional personnel and managing a $750M+ capital asset portfolio",
+      "Overcame geographic bottlenecks by engineering innovative operational frameworks, increasing overall enterprise operational readiness by 21%",
+      "Drove a 70% increase in equipment availability by auditing and rewriting legacy SOPs and executing targeted procurement training for technical managers",
+      "Optimized the procurement pipeline by collaborating with supply chain leadership, eliminating logistical bottlenecks and reducing acquisition inefficiencies by 20%",
+      "Secured a flawless 100% compliance rating across all scheduled and unscheduled safety, environmental, and procedural audits through rigorous standardization",
+      "Mentored and developed subordinate leadership teams, driving elite performance standards that resulted in two departments winning national-level industry awards for operational excellence",
+    ],
+  },
+  {
+    org: "U.S. Army",
+    title: "Maintenance Technician Team Lead",
+    period: "Dec 2010 – Apr 2012",
+    bullets: [
+      "Led a team of peers in troubleshooting, inspecting, installing, assembling, overhauling, arming, de-arming, modifying, and repairing complex vehicle systems",
+      "Facilitated daily stand-ups to coordinate work, surface impediments, and track completion",
+    ],
+  },
+];
+---
+
+<BaseLayout title="Experience" description="Seth Dow's professional experience">
+  <div class="container">
+    <header class="page-header">
+      <h1>Experience</h1>
+      <p>24 years of leadership spanning Agile delivery, program management, enterprise operations, and training development.</p>
+    </header>
+
+    <div class="timeline">
+      {roles.map(({ org, title, period, bullets }) => (
+        <div class="role">
+          <div class="role-meta">
+            <span class="org">{org}</span>
+            <h2>{title}</h2>
+            <span class="period">{period}</span>
+          </div>
+          <ul class="bullets">
+            {bullets.map((b) => <li>{b}</li>)}
+          </ul>
+        </div>
+      ))}
+    </div>
+
+    <section class="education">
+      <h2 class="section-title">Education</h2>
+      <div class="edu-grid">
+        {[
+          { degree: "Master of Business Administration", field: "Government Contracting & Acquisition · GPA 3.9", school: "American Military University · 2017–2020" },
+          { degree: "Bachelor of Science", field: "Environmental Science · GPA 4.47", school: "American Military University · 2014–2016" },
+        ].map(({ degree, field, school }) => (
+          <div class="edu-card">
+            <h3>{degree}</h3>
+            <p class="field">{field}</p>
+            <p class="school">{school}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <section class="education">
+      <h2 class="section-title">Licenses & Certifications</h2>
+      <div class="cert-grid">
+        {[
+          { name: "Certified Advanced SAFe® Practice Consultant", issuer: "SAFe by Scaled Agile, Inc.", date: "Issued May 2026 · Expires May 2027" },
+          { name: "Certified AI-Empowered SAFe 6 Practice Consultant", issuer: "SAFe by Scaled Agile, Inc.", date: "Issued May 2026 · Expires Apr 2027" },
+          { name: "Certified SAFe® 6 Scrum Master", issuer: "SAFe by Scaled Agile, Inc.", date: "" },
+          { name: "Writing Effective OKRs in SAFe®", issuer: "SAFe by Scaled Agile, Inc.", date: "Issued May 2026" },
+          { name: "Essential AI Skills", issuer: "SAFe by Scaled Agile, Inc.", date: "Issued May 2026" },
+          { name: "AI Skills for SAFe Practice Consultants", issuer: "SAFe by Scaled Agile, Inc.", date: "Issued May 2026" },
+          { name: "Generative AI Leader Certification", issuer: "Google", date: "Issued May 2026 · Expires May 2029" },
+          { name: "Microsoft Certified: AI Transformation Leader", issuer: "Microsoft", date: "Issued May 2026" },
+          { name: "Reinvention with Agentic AI", issuer: "Accenture", date: "Issued Jan 2026" },
+          { name: "Certified Palantir Foundry Aware Professional", issuer: "Palantir Technologies", date: "Issued Nov 2025 · Expires Nov 2027" },
+        ].map(({ name, issuer, date }) => (
+          <div class="cert-card">
+            <h3>{name}</h3>
+            <p class="field">{issuer}</p>
+            {date && <p class="school">{date}</p>}
+          </div>
+        ))}
+      </div>
+    </section>
+  </div>
+</BaseLayout>
+
+<style>
+  .container { padding-top: 3rem; padding-bottom: 4rem; }
+
+  .page-header {
+    margin-bottom: 3rem;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 2rem;
+  }
+  .page-header h1 { font-size: 2rem; font-weight: 700; margin-bottom: 0.5rem; }
+  .page-header p { color: var(--muted); }
+
+  .timeline { display: flex; flex-direction: column; }
+
+  .role {
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    gap: 2rem;
+    padding: 2rem 0;
+    border-top: 1px solid var(--border);
+  }
+
+  .role-meta { display: flex; flex-direction: column; gap: 0.3rem; }
+  .org { color: var(--accent); font-size: 0.78rem; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; }
+  .role-meta h2 { font-size: 0.95rem; font-weight: 600; line-height: 1.4; }
+  .period { color: var(--muted); font-size: 0.8rem; }
+
+  .bullets { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+  .bullets li {
+    color: var(--muted);
+    font-size: 0.875rem;
+    line-height: 1.65;
+    padding-left: 1rem;
+    position: relative;
+  }
+  .bullets li::before {
+    content: "–";
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+  }
+
+  .education {
+    margin-top: 3rem;
+    padding-top: 3rem;
+    border-top: 1px solid var(--border);
+  }
+  .section-title { font-size: 1.4rem; font-weight: 600; margin-bottom: 1.5rem; }
+
+  .edu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 1rem;
+  }
+  .edu-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1.25rem;
+  }
+  .edu-card h3 { font-size: 0.9rem; font-weight: 600; margin-bottom: 0.3rem; }
+  .field { color: var(--accent); font-size: 0.8rem; margin-bottom: 0.2rem; }
+  .school { color: var(--muted); font-size: 0.8rem; }
+
+  .cert-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 1rem;
+  }
+  .cert-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1.25rem;
+    transition: border-color 0.2s;
+  }
+  .cert-card:hover { border-color: var(--accent); }
+  .cert-card h3 { font-size: 0.875rem; font-weight: 600; margin-bottom: 0.3rem; line-height: 1.4; }
+
+  @media (max-width: 640px) {
+    .role { grid-template-columns: 1fr; gap: 0.75rem; }
+  }
+</style>
