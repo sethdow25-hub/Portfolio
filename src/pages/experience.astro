@@ -141,22 +141,31 @@ const roles = [
       <h2 class="section-title">Licenses & Certifications</h2>
       <div class="cert-grid">
         {[
-          { name: "Certified Advanced SAFe® Practice Consultant", issuer: "SAFe by Scaled Agile, Inc.", date: "Issued May 2026 · Expires May 2027" },
-          { name: "Certified AI-Empowered SAFe 6 Practice Consultant", issuer: "SAFe by Scaled Agile, Inc.", date: "Issued May 2026 · Expires Apr 2027" },
-          { name: "Certified SAFe® 6 Scrum Master", issuer: "SAFe by Scaled Agile, Inc.", date: "" },
-          { name: "Writing Effective OKRs in SAFe®", issuer: "SAFe by Scaled Agile, Inc.", date: "Issued May 2026" },
-          { name: "Essential AI Skills", issuer: "SAFe by Scaled Agile, Inc.", date: "Issued May 2026" },
-          { name: "AI Skills for SAFe Practice Consultants", issuer: "SAFe by Scaled Agile, Inc.", date: "Issued May 2026" },
-          { name: "Generative AI Leader Certification", issuer: "Google", date: "Issued May 2026 · Expires May 2029" },
-          { name: "Microsoft Certified: AI Transformation Leader", issuer: "Microsoft", date: "Issued May 2026" },
-          { name: "Reinvention with Agentic AI", issuer: "Accenture", date: "Issued Jan 2026" },
-          { name: "Certified Palantir Foundry Aware Professional", issuer: "Palantir Technologies", date: "Issued Nov 2025 · Expires Nov 2027" },
-        ].map(({ name, issuer, date }) => (
-          <div class="cert-card">
-            <h3>{name}</h3>
-            <p class="field">{issuer}</p>
-            {date && <p class="school">{date}</p>}
-          </div>
+          { name: "Certified Advanced SAFe® Practice Consultant", issuer: "SAFe by Scaled Agile, Inc.", date: "Issued May 2026 · Expires May 2027", url: "https://www.credly.com/org/scaled-agile/badge/advanced-safe-practice-consultant" },
+          { name: "Certified AI-Empowered SAFe 6 Practice Consultant", issuer: "SAFe by Scaled Agile, Inc.", date: "Issued May 2026 · Expires Apr 2027", url: "https://www.credly.com/org/scaled-agile/badge/certified-ai-empowered-safe-practice-consultant" },
+          { name: "Certified SAFe® 6 Scrum Master", issuer: "SAFe by Scaled Agile, Inc.", date: "", url: "https://www.credly.com/org/scaled-agile/badge/certified-safe-6-scrum-master.1" },
+          { name: "Writing Effective OKRs in SAFe®", issuer: "SAFe by Scaled Agile, Inc.", date: "Issued May 2026", url: "https://www.credly.com/org/scaled-agile/badge/writing-effective-okrs-in-safe" },
+          { name: "Essential AI Skills", issuer: "SAFe by Scaled Agile, Inc.", date: "Issued May 2026", url: "https://www.credly.com/org/scaled-agile/badge/essential-ai-skills" },
+          { name: "AI Skills for SAFe Practice Consultants", issuer: "SAFe by Scaled Agile, Inc.", date: "Issued May 2026", url: "https://www.credly.com/org/scaled-agile/badge/ai-skills-for-safe-practice-consultants" },
+          { name: "Generative AI Leader Certification", issuer: "Google", date: "Issued May 2026 · Expires May 2029", url: "https://www.credly.com/org/google-cloud/badge/generative-ai-leader-certification" },
+          { name: "Microsoft Certified: AI Transformation Leader", issuer: "Microsoft", date: "Issued May 2026", url: "https://learn.microsoft.com/en-us/credentials/certifications/ai-transformation-leader/" },
+          { name: "Reinvention with Agentic AI", issuer: "Accenture", date: "Issued Jan 2026", url: "" },
+          { name: "Certified Palantir Foundry Aware Professional", issuer: "Palantir Technologies", date: "Issued Nov 2025 · Expires Nov 2027", url: "https://learn.palantir.com/foundry-aip-aware" },
+        ].map(({ name, issuer, date, url }) => (
+          url ? (
+            <a href={url} target="_blank" rel="noopener noreferrer" class="cert-card cert-link">
+              <h3>{name}</h3>
+              <p class="field">{issuer}</p>
+              {date && <p class="school">{date}</p>}
+              <p class="verify-label">View credential →</p>
+            </a>
+          ) : (
+            <div class="cert-card">
+              <h3>{name}</h3>
+              <p class="field">{issuer}</p>
+              {date && <p class="school">{date}</p>}
+            </div>
+          )
         ))}
       </div>
     </section>
@@ -240,6 +249,8 @@ const roles = [
   }
   .cert-card:hover { border-color: var(--accent); }
   .cert-card h3 { font-size: 0.875rem; font-weight: 600; margin-bottom: 0.3rem; line-height: 1.4; }
+  .cert-link { display: block; text-decoration: none; color: inherit; cursor: pointer; }
+  .verify-label { color: var(--accent); font-size: 0.75rem; margin-top: 0.5rem; }
 
   @media (max-width: 640px) {
     .role { grid-template-columns: 1fr; gap: 0.75rem; }
