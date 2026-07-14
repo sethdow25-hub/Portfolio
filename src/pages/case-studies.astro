@@ -3,6 +3,31 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
 const caseStudies = [
   {
+    title: "Building AI Agents That Give Delivery Teams Their Time Back",
+    role: "Release Train Engineer & AI Agent Co-Creator - Accenture Federal Services",
+    context: "Agentic AI for federal Agile delivery - GenAI.mil / Agent Arsenal Challenge",
+    problem:
+      "RTEs and Agile coaches on federal programs were losing thousands of hours a year to manual data consolidation, reporting, and backlog admin - an RTE alone spent ~17 hours a week on it. That overhead slowed decisions, raised delivery risk, and pulled scarce experts off mission-critical work.",
+    actions: [
+      "Co-designed and built two secure, mission-ready AI agents on GenAI.mil - the government's air-gapped, Gemini-powered platform - during Accenture's Agent Arsenal Challenge.",
+      "Built an RTE Assistant and a Team Coach Assistant that automate SDLC administration: ceremony prep, reporting, dependency mapping, backlog refinement, and WSJF prioritization, with human-in-the-loop checkpoints.",
+      "Integrated real-time delivery intelligence across Jira, ServiceNow, and Azure DevOps for live capacity, predictability, and proactive risk/dependency alerts.",
+      "Our Army account produced two of the challenge's top-five finalists.",
+    ],
+    results: [
+      "RTE Assistant: ~900 RTE hours a year redirected from admin to Agile leadership across 5 ARTs; program predictability lifted to 90-100%.",
+      "Team Coach Assistant: ~2,000 coaching hours a year reclaimed per ART; Say/Do delivery predictability lifted to 90-100%.",
+      "50% faster risk-and-dependency identification, catching schedule slips before they escalate.",
+    ],
+    stats: [
+      { value: "Top 5", label: "Agent Arsenal finalist (2 of 5)" },
+      { value: "900 hrs", label: "RTE hours reclaimed/yr (5 ARTs)" },
+      { value: "2,000 hrs", label: "Coach hours reclaimed/yr per ART" },
+      { value: "50%", label: "Faster risk/dependency ID" },
+    ],
+    tags: ["Generative AI", "Agentic AI", "SAFe", "GenAI.mil", "Federal Delivery"],
+  },
+  {
     title: "Cutting Feature Cycle Time from 99 to 70 Days",
     role: "Release Train Engineer - Accenture Federal Services",
     context: "Federal Enterprise Logistics - Agile Release Train of 7 teams",
@@ -57,7 +82,7 @@ const caseStudies = [
 ];
 ---
 
-<BaseLayout title="Case Studies" description="Case studies from Seth Dow - enterprise Agile delivery and SAFe transformation">
+<BaseLayout title="Case Studies" description="Case studies from Seth Dow - enterprise Agile delivery, AI agents, and SAFe transformation">
   <div class="container">
     <header class="page-header">
       <h1>Case Studies</h1>
