@@ -29,6 +29,31 @@ const caseStudies = [
     ],
     tags: ["SAFe", "Release Train Engineering", "Process Optimization", "Federal Delivery"],
   },
+  {
+    title: "Standing Up SAFe from Scratch: 25% Efficiency Gain Across 5 PIs",
+    role: "IT Project Manager - SAFe Transformation Lead & Scrum Master - Accenture Federal Services",
+    context: "SAP Maintenance Business Area - 7-member cross-functional Scrum team",
+    problem:
+      "An SAP Maintenance business area was delivering without a scaled Agile framework - inconsistent cadence, unclear priorities, and no shared rhythm. I was brought in as the primary Agile transformation lead, partnering with the RTE and Enterprise Agile Lead, to stand up SAFe from the ground up.",
+    actions: [
+      "Led the foundational transition to the Scaled Agile Framework (SAFe) - establishing cadence, roles, and ceremonies from scratch.",
+      "Engineered continuous-improvement frameworks and cleared critical bottlenecks across five Program Increments.",
+      "Directed a 7-member cross-functional Scrum team through disciplined 10-day sprint cycles, managing the backlog in ServiceNow.",
+      "Coached the team to a stable, predictable delivery rhythm aligned to enterprise maintenance goals.",
+    ],
+    results: [
+      "Drove a 25% measurable increase in team efficiency over 5 Program Increments.",
+      "Sustained a consistent velocity of 33 story points per sprint.",
+      "Delivered 50 complex SAP features aligned with strategic enterprise maintenance goals.",
+    ],
+    stats: [
+      { value: "+25%", label: "Team efficiency (5 PIs)" },
+      { value: "33", label: "Story points / sprint" },
+      { value: "50", label: "SAP features delivered" },
+      { value: "7", label: "Scrum team members" },
+    ],
+    tags: ["SAFe", "Agile Transformation", "Scrum Master", "SAP", "Federal Delivery"],
+  },
 ];
 ---
 
@@ -48,17 +73,19 @@ const caseStudies = [
             <p class="cs-context">{cs.context}</p>
           </div>
 
-          <div class="cs-visual">
-            <div class="bar-row">
-              <span class="bar-label">Before</span>
-              <div class="bar bar-before"><span>{cs.before} days</span></div>
+          {cs.before && (
+            <div class="cs-visual">
+              <div class="bar-row">
+                <span class="bar-label">Before</span>
+                <div class="bar bar-before"><span>{cs.before} days</span></div>
+              </div>
+              <div class="bar-row">
+                <span class="bar-label">After</span>
+                <div class="bar bar-after" style={`width:${(cs.after / cs.before) * 100}%`}><span>{cs.after} days</span></div>
+              </div>
+              <p class="delta">-{Math.round((1 - cs.after / cs.before) * 100)}% cycle time</p>
             </div>
-            <div class="bar-row">
-              <span class="bar-label">After</span>
-              <div class="bar bar-after" style={`width:${(cs.after / cs.before) * 100}%`}><span>{cs.after} days</span></div>
-            </div>
-            <p class="delta">-{Math.round((1 - cs.after / cs.before) * 100)}% cycle time</p>
-          </div>
+          )}
 
           <div class="cs-stats">
             {cs.stats.map((s) => (
