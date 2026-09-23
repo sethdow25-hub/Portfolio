@@ -28,6 +28,31 @@ const caseStudies = [
     tags: ["Generative AI", "Agentic AI", "SAFe", "GenAI.mil", "Federal Delivery"],
   },
   {
+    title: "AI-Powered User Story Generator: From Three Questions to Sprint-Ready Stories",
+    role: "Creator, Designer & Builder - Accenture Federal Services",
+    context: "Low-code AI tooling for Agile backlog refinement - Power Apps + Power Automate",
+    problem:
+      "Writing well-formed user stories with clear acceptance criteria is slow, inconsistent work that pulls Product Owners and teams away from delivery. Story quality varied from author to author, and moving drafts into the backlog meant manual copy-and-paste.",
+    actions: [
+      "Designed and built a Power Apps canvas app that turns three plain-language inputs - who the user is, what they need, and why - plus optional context and acceptance notes into a complete AI-drafted user story.",
+      "Wired the app to a Power Automate generation flow that returns a title, an \"As a / I want / So that\" story, and itemized acceptance criteria as structured JSON.",
+      "Kept a human in the loop: every AI draft stays fully editable, and only reviewed stories can be added to the export queue.",
+      "Built an in-session export queue and a second flow that exports reviewed stories to CSV for bulk backlog import, with input validation and a documented test procedure.",
+    ],
+    results: [
+      "Reduced story authoring to three required inputs and a single click to generate a complete draft with acceptance criteria.",
+      "Standardized story format and acceptance-criteria structure across authors.",
+      "Replaced one-at-a-time copy-and-paste with batch CSV export of reviewed stories into the backlog.",
+    ],
+    stats: [
+      { value: "3", label: "Inputs to a full story" },
+      { value: "1-click", label: "AI draft + acceptance criteria" },
+      { value: "100%", label: "Human-reviewed before export" },
+      { value: "CSV", label: "Batch backlog export" },
+    ],
+    tags: ["Generative AI", "Power Apps", "Power Automate", "Low-Code", "Backlog Refinement"],
+  },
+  {
     title: "Cutting Feature Cycle Time from 99 to 70 Days",
     role: "Release Train Engineer - Accenture Federal Services",
     context: "Federal Enterprise Logistics - Agile Release Train of 7 teams",
