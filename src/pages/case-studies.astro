@@ -53,6 +53,31 @@ const caseStudies = [
     tags: ["Generative AI", "Power Apps", "Power Automate", "Low-Code", "Backlog Refinement"],
   },
   {
+    title: "Daily Brew: An AI Morning Briefing That Turns Inbox Noise into a Plan",
+    role: "Creator, Designer & Builder - Accenture Federal Services",
+    context: "Personal productivity automation - Power Automate + AI Builder + Microsoft 365",
+    problem:
+      "Every morning started with the same scramble: triaging unread email, checking the day's meetings, and scrolling through Teams chats and channels to figure out what changed overnight. Critical asks were buried across four different places, and action items that surfaced in chat often never made it onto a task list.",
+    actions: [
+      "Designed and built a scheduled Power Automate flow that runs at 8 AM every weekday and gathers the last 24 hours of context: unread email, the next 24 hours of calendar events, recent Teams direct messages, and team channel activity.",
+      "Normalized the raw data - filtering to recent items and converting meeting times to Eastern - and passed it to a custom AI Builder prompt that synthesizes a single prioritized briefing.",
+      "Engineered the prompt to return structured JSON with both a formatted HTML briefing and a list of extracted action items, so the output could drive automation, not just be read.",
+      "Delivered the briefing by email and as a Teams channel post, and automatically created a Microsoft Planner task for each action item, assigned and due the next day.",
+    ],
+    results: [
+      "Replaced a manual morning triage across four sources with one AI-generated briefing waiting in the inbox at 8 AM.",
+      "Action items buried in email and chat now land in Planner automatically, so nothing falls through the cracks.",
+      "Integrated five Microsoft 365 services - Outlook, Calendar, Teams, Planner, and AI Builder - in a single hands-off workflow.",
+    ],
+    stats: [
+      { value: "8 AM", label: "Briefing every weekday" },
+      { value: "4", label: "Sources synthesized" },
+      { value: "3", label: "Outputs: email, Teams, Planner" },
+      { value: "0", label: "Manual steps" },
+    ],
+    tags: ["Generative AI", "Power Automate", "AI Builder", "Microsoft 365", "Workflow Automation"],
+  },
+  {
     title: "Cutting Feature Cycle Time from 99 to 70 Days",
     role: "Release Train Engineer - Accenture Federal Services",
     context: "Federal Enterprise Logistics - Agile Release Train of 7 teams",
